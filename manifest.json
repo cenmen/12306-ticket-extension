@@ -1,0 +1,41 @@
+{
+  "name": "12306自助抢票",
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "12306自助抢票",
+  "permissions": [
+    "storage",
+    "notifications"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/logo.png",
+      "32": "/images/logo.png",
+      "48": "/images/logo.png",
+      "128": "/images/logo.png"
+    }
+  },
+  "icons": {
+    "16": "/images/logo.png",
+    "32": "/images/logo.png",
+    "48": "/images/logo.png",
+    "128": "/images/logo.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://kyfw.12306.cn/otn/leftTicket/init*"],
+      "js": ["utils.js", "content-script-list.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://kyfw.12306.cn/otn/confirmPassenger/initDc*"],
+      "js": ["utils.js", "content-script-order.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="options">
+      <div class="option-item">
+        <label>出发地：</label>
+        <input id="fromLocationInput" type="text" placeholder="如：广州南">
+      </div>
+      <div id="fromLocationSelects"></div>
+      <div class="option-item">
+        <label>目的地：</label>
+        <input id="toLocationInput" type="text" placeholder="如：深圳北">
+      </div>
+      <div id="toLocationSelects"></div>
+      <div class="option-item">
+        <label>日期：</label>
+        <input id="dateInput" type="text" placeholder="如：01-05">
+      </div>
+      <div class="option-item">
+        <label>车次开始时间：</label>
+        <input id="startTimeInput" type="text" placeholder="如（注：英文冒号）：16:00">
+      </div>
+    </div>
+    <div class="seats">
+      <label>座位：</label>
+      <input type="checkbox" id="businessCheckBox" checked>
+      <label for="businessCheckBox">特等座</label>
+      <input type="checkbox" id="firstCheckBox" checked>
+      <label for="firstCheckBox">一等座</label>
+      <input type="checkbox" id="secondCheckBox" checked>
+      <label for="secondCheckBox">二等座</label>
+    </div>
+    <div class="passengers">
+      <input type="text">
+    </div>
+    <div class="add-btn">
+      <button id="addPassengerBtn">添加乘车人</button>
+    </div>
+    <!-- <div class="tips">如：每个间隔发送数为1，发送次数为10，间隔为2，即是每2秒发送1条弹幕，发送10次，所以总共发送10条弹幕。</div> -->
+    <div class="tips">Tips：①车次开始时间会筛选合格车次时间为此时间后。</div>
+    <div class="footer">
+      <button id="submitBtn">保存</button>
+      <button id="checkStorageBtn">查看缓存</button>
+      <button id="clearStorageBtn">清除缓存</button>
+    </div>
+    <div class="error"></div>
+    <div class="storage"></div>
+  </div>
+  <script src="data-source.js"></script>
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
